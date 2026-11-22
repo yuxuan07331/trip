@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="2人中國自由行">
+<meta name="theme-color" content="#17140F">
+<title>2人中國自由行</title>
+<link rel="apple-touch-icon" id="ico" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='%2317140F'/%3E%3Ctext x='90' y='115' font-size='90' text-anchor='middle' fill='%23C9A85C'%3E%E2%9C%88%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF6EC;--card:#fff;--ink:#1c1a17;--sub:#857d70;--acc:#B08D4F;--dark:#17140F;--lav:#ECE5F5;--pink:#F6E1E4;--blue:#DFEAF4;--line:#E8DFCB;--r:14px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter','Noto Sans TC',sans-serif;letter-spacing:.06em;line-height:1.75;touch-action:manipulation;overflow-x:hidden}
+.wrap{max-width:430px;margin:0 auto;padding:0 16px 60px;overflow-x:hidden}
+input,select,button{font-family:inherit;font-size:16px;touch-action:manipulation}
+input,select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);letter-spacing:.04em}
+button{border:0;border-radius:10px;padding:10px 14px;background:var(--dark);color:#E6CF94;font-weight:500;letter-spacing:.1em}
+.hero{background:var(--dark);color:#F3E9D2;margin:0 -16px 18px;padding:28px 20px 20px;border-radius:0 0 26px 26px}
+.eyebrow{color:var(--acc);font-size:12px;letter-spacing:.4em}
+h1{margin:6px 0 4px;font-size:24px;font-weight:700;color:#E6CF94}
+.hero p{margin:0;font-size:13px;color:#cfc6b2}
+.cd{margin:14px 0;display:inline-block;padding:6px 16px;border:1px solid var(--acc);border-radius:99px;color:#E6CF94;font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:0 0 14px;box-shadow:0 4px 14px rgba(60,45,10,.05)}
+.hero .card{background:#221E16;border-color:#3b3426;color:#F3E9D2;margin:0;box-shadow:none}
+.card h3{margin:0 0 8px;font-size:14px;color:var(--acc);letter-spacing:.2em;font-weight:500}
+.row{padding:6px 0;border-top:1px solid var(--line);font-size:14px}
+.hero .row{border-color:#3b3426}.row:first-of-type{border-top:0}
+.row b{display:block;color:var(--acc)}
+.s{font-size:12px;color:var(--sub);margin:4px 0}
+small{color:var(--sub);font-size:11px}
+summary{font-weight:700;font-size:16px;color:var(--ink);cursor:pointer;list-style:none}
+summary::after{content:"＋/－";float:right;color:var(--acc);font-size:12px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.g1{display:grid;gap:8px;margin:8px 0}
+label.f{font-size:12px;color:var(--sub);display:block}
+ul.l{list-style:none;padding:0;margin:8px 0}
+ul.l li{display:flex;gap:6px;align-items:center;border-top:1px solid var(--line);padding:6px 0;font-size:13px}
+ul.l li span{flex:1;word-break:break-all}
+.x{background:var(--pink);color:#a14a5a;padding:2px 10px}
+.ghost{background:var(--lav);color:#5b4a86}
+.stat{display:flex;justify-content:space-between;font-size:13px;padding:3px 0;border-bottom:1px dashed var(--line)}
+.tot{font-size:20px;color:var(--acc);font-weight:700}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:6px 0 14px}
+.tabs label{text-align:center;padding:9px 0;border:1px solid var(--line);border-radius:10px;font-size:13px;background:#fff;color:var(--sub)}
+.tb{position:absolute;opacity:0;pointer-events:none}
+.panel{display:none}
+#t1:checked~.panels #p1,#t2:checked~.panels #p2,#t3:checked~.panels #p3,#t4:checked~.panels #p4,#t5:checked~.panels #p5,#t6:checked~.panels #p6,#t7:checked~.panels #p7,#t8:checked~.panels #p8{display:block}
+#t1:checked~.tabs [for=t1],#t2:checked~.tabs [for=t2],#t3:checked~.tabs [for=t3],#t4:checked~.tabs [for=t4],#t5:checked~.tabs [for=t5],#t6:checked~.tabs [for=t6],#t7:checked~.tabs [for=t7],#t8:checked~.tabs [for=t8]{background:var(--dark);color:#E6CF94;border-color:var(--dark)}
+h2{font-size:18px;margin:0 0 12px}
+h2 .d{color:var(--acc);font-family:'Inter';letter-spacing:.15em;font-size:13px;display:block}
+.addr{display:flex;gap:8px;margin-top:8px}.addr input{flex:1;min-width:0}
+.lk{display:inline-block;margin-top:6px;padding:6px 14px;border-radius:99px;background:var(--blue);color:#2f5f8a;text-decoration:none;font-size:13px}
+.tag{display:inline-block;font-size:11px;padding:1px 10px;border-radius:99px;background:var(--pink);color:#a14a5a}
+.booked{background:var(--dark);color:#E6CF94;font-weight:700}
+.tl{list-style:none;margin:0;padding:0 0 0 14px;border-left:1px solid var(--acc)}
+.tl li{padding:4px 0;font-size:14px}.tl b{color:var(--acc);display:block;font-size:12px}
+.ck{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.ck input{width:22px;height:22px;flex:none;margin:2px 0;accent-color:var(--acc)}
+h4{margin:12px 0 2px;font-size:13px;color:var(--ink);letter-spacing:.15em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+<div class="eyebrow">TRIP GUIDE</div>
+<h1>符&amp;瑄第一次出國</h1>
+<p>4/28 – 5/4・七天六夜・2位成人</p>
+<div class="cd" id="cd">倒數計算中…</div>
+<div class="card"><h3>航班資訊</h3>
+<div class="row"><b>去程 4/28</b>航班號：暫定｜起飛：暫定｜降落：暫定｜機場：暫定</div>
+<div class="row"><b>回程 5/4</b>航班號、時間、機場：待確認</div></div>
+</header>
+
+<div class="card"><h3>匯率換算</h3>
+<label class="f">匯率（1 人民幣 = ? 台幣，可修改）<input id="rate" inputmode="decimal"></label>
+<div class="g2"><input id="cc" inputmode="decimal" placeholder="人民幣 ¥"><input id="ct" inputmode="decimal" placeholder="台幣 NT$"></div></div>
+
+<details class="card" id="acct" open>
+<summary>記帳</summary>
+<div class="g2"><select id="cat"><option>吃喝</option><option>玩樂</option><option>住宿</option><option>機票</option><option>彩妝</option><option>菸酒</option><option>衣服</option><option value="自訂">其他（自行輸入）</option></select>
+<select id="day"><option>出發前</option><option>Day1</option><option>Day2</option><option>Day3</option><option>Day4</option><option>Day5</option><option>Day6</option><option>Day7</option></select></div>
+<div class="g1"><input id="cust" placeholder="自訂分類名稱" style="display:none"><input id="nm" placeholder="項目名稱">
+<div class="g2"><input id="amt" inputmode="decimal" placeholder="金額"><select id="cur"><option value="CNY">人民幣 ¥</option><option value="TWD">台幣 NT$</option></select></div></div>
+<button id="add">新增</button> <span class="s" id="msg"></span>
+<ul class="l" id="list"></ul>
+<div class="tot" id="tot">NT$0</div><small id="totc"></small>
+<h4>依天數</h4><div id="byd"></div>
+<h4>依分類</h4><div id="byc"></div>
+<div style="margin-top:12px"><button id="clr" class="x">清空全部</button> <button id="cx" class="ghost" style="display:none">取消</button></div>
+</details>
+
+<div class="tabwrap">
+<input type="radio" name="t" id="t1" class="tb" checked><input type="radio" name="t" id="t2" class="tb"><input type="radio" name="t" id="t3" class="tb"><input type="radio" name="t" id="t4" class="tb"><input type="radio" name="t" id="t5" class="tb"><input type="radio" name="t" id="t6" class="tb"><input type="radio" name="t" id="t7" class="tb"><input type="radio" name="t" id="t8" class="tb">
+<div class="tabs"><label for="t1">Day1</label><label for="t2">Day2</label><label for="t3">Day3</label><label for="t4">Day4</label><label for="t5">Day5</label><label for="t6">Day6</label><label for="t7">Day7</label><label for="t8">清單</label></div>
+<div class="panels">
+
+<section class="panel" id="p1"><h2><span class="d">DAY 1・4/28</span>西安</h2>
+<div class="card"><h3>住宿</h3>4/28 西安（飯店名稱待補）<div class="addr"><input id="a1" class="ad" placeholder="貼上住宿地址"><button onclick="cp('a1',this)">複製地址</button></div></div>
+<div class="card"><h3>天氣</h3>最高／最低：待確認<br>降雨機率：待確認<p class="s">行程日期超出預報範圍，未編造數字。查詢日 2026/11/23，來源：無。</p><a class="lk" href="https://www.google.com/search?q=西安+4月28日+天氣" target="_blank">查天氣</a></div>
+<div class="card"><h3>時間軸</h3><ul class="tl"><li><b>時間待確認</b>抵達西安</li></ul><p class="s">包車／交通：無</p></div>
+<div class="card"><h3>候選餐廳／景點</h3><p class="s">尚無資料（待補）</p></div></section>
+
+<section class="panel" id="p2"><h2><span class="d">DAY 2・4/29</span>西安</h2>
+<div class="card"><h3>住宿</h3>4/29 西安（飯店名稱待補）<div class="addr"><input id="a2" class="ad" placeholder="貼上住宿地址"><button onclick="cp('a2',this)">複製地址</button></div></div>
+<div class="card"><h3>天氣</h3>最高／最低：待確認<br>降雨機率：待確認<p class="s">行程日期超出預報範圍，未編造數字。查詢日 2026/11/23，來源：無。</p><a class="lk" href="https://www.google.com/search?q=西安+4月29日+天氣" target="_blank">查天氣</a></div>
+<div class="card"><h3>時間軸</h3><p class="s">尚無行程資料。包車／交通：無</p></div>
+<div class="card"><h3>候選餐廳／景點</h3><p class="s">尚無資料（待補）</p></div></section>
+
+<section class="panel" id="p3"><h2><span class="d">DAY 3・4/30</span>成都</h2>
+<div class="card"><h3>住宿</h3>4/30 成都（飯店名稱待補）<div class="addr"><input id="a3" class="ad" placeholder="貼上住宿地址"><button onclick="cp('a3',this)">複製地址</button></div></div>
+<div class="card"><h3>天氣</h3>最高／最低：待確認<br>降雨機率：待確認<p class="s">行程日期超出預報範圍，未編造數字。查詢日 2026/11/23，來源：無。</p><a class="lk" href="https://www.google.com/search?q=成都+4月30日+天氣" target="_blank">查天氣</a></div>
+<div class="card"><h3>時間軸</h3><ul class="tl"><li><b>時間待確認</b>抵達成都</li></ul><p class="s">包車／交通：無（西安→成都交通尚未填寫）</p></div>
+<div class="card"><h3>候選餐廳／景點</h3><p class="s">尚無資料（待補）</p></div></section>
+
+<section class="panel" id="p4"><h2><span class="d">DAY 4・5/1</span>成都</h2>
+<div class="card"><h3>住宿</h3>5/1 成都（飯店名稱待補）<div class="addr"><input id="a4" class="ad" placeholder="貼上住宿地址"><button onclick="cp('a4',this)">複製地址</button></div></div>
+<div class="card"><h3>天氣</h3>最高／最低：待確認<br>降雨機率：待確認<p class="s">行程日期超出預報範圍，未編造數字。查詢日 2026/11/23，來源：無。</p><a class="lk" href="https://www.google.com/search?q=成都+5月1日+天氣" target="_blank">查天氣</a></div>
+<div class="card"><h3>時間軸</h3><p class="s">尚無行程資料。包車／交通：無</p></div>
+<div class="card"><h3>候選餐廳／景點</h3><p class="s">尚無資料（待補）</p></div></section>
+
+<section class="panel" id="p5"><h2><span class="d">DAY 5・5/2</span>重慶 <span class="tag">暫定</span></h2>
+<div class="card"><h3>住宿</h3>5/2 重慶（暫定，飯店名稱待補）<div class="addr"><input id="a5" class="ad" placeholder="貼上住宿地址"><button onclick="cp('a5',this)">複製地址</button></div></div>
+<div class="card"><h3>天氣</h3>最高／最低：待確認<br>降雨機率：待確認<p class="s">行程日期超出預報範圍，未編造數字。查詢日 2026/11/23，來源：無。</p><a class="lk" href="https://www.google.com/search?q=重慶+5月2日+天氣" target="_blank">查天氣</a></div>
+<div class="card"><h3>時間軸</h3><ul class="tl"><li><b>時間待確認</b>抵達重慶</li></ul><p class="s">包車／交通：無</p></div>
+<div class="card"><h3>候選餐廳／景點</h3><p class="s">尚無資料（待補）</p></div></section>
+
+<section class="panel" id="p6"><h2><span class="d">DAY 6・5/3</span>上海或蘇州 <span class="tag">暫定</span></h2>
+<div class="card"><h3>住宿</h3>5/3 上海或蘇州（暫定，飯店名稱待補）<div class="addr"><input id="a6" class="ad" placeholder="貼上住宿地址"><button onclick="cp('a6',this)">複製地址</button></div></div>
+<div class="card"><h3>天氣</h3>最高／最低：待確認<br>降雨機率：待確認<p class="s">城市未定且超出預報範圍，未編造數字。查詢日 2026/11/23，來源：無。</p><a class="lk" href="https://www.google.com/search?q=上海+5月3日+天氣" target="_blank">查上海</a> <a class="lk" href="https://www.google.com/search?q=蘇州+5月3日+天氣" target="_blank">查蘇州</a></div>
+<div class="card"><h3>時間軸</h3><p class="s">尚無行程資料。包車／交通：無</p></div>
+<div class="card"><h3>候選餐廳／景點</h3><p class="s">尚無資料（待補）</p></div></section>
+
+<section class="panel" id="p7"><h2><span class="d">DAY 7・5/4</span>上海或蘇州 <span class="tag">暫定</span></h2>
+<div class="card"><h3>住宿</h3>5/4 上海或蘇州（暫定，飯店名稱待補）<div class="addr"><input id="a7" class="ad" placeholder="貼上住宿地址"><button onclick="cp('a7',this)">複製地址</button></div></div>
+<div class="card"><h3>天氣</h3>最高／最低：待確認<br>降雨機率：待確認<p class="s">城市未定且超出預報範圍，未編造數字。查詢日 2026/11/23，來源：無。</p><a class="lk" href="https://www.google.com/search?q=上海+5月4日+天氣" target="_blank">查上海</a> <a class="lk" href="https://www.google.com/search?q=蘇州+5月4日+天氣" target="_blank">查蘇州</a></div>
+<div class="card"><h3>時間軸</h3><p class="s">5/4 回程日，航班資訊待確認。尚無行程資料。包車／交通：無</p></div>
+<div class="card"><h3>候選餐廳／景點</h3><p class="s">尚無資料（待補）</p></div></section>
+
+<section class="panel" id="p8"><h2><span class="d">CHECKLIST</span>出發前確認清單</h2>
+<div class="card"><h3>需下載 APP</h3>
+<label class="ck"><input type="checkbox" data-k="app1">支付寶或微信（綁定信用卡付款用）</label>
+<label class="ck"><input type="checkbox" data-k="app2">鐵路12306（查高鐵火車，要確定綁定台胞證資料）</label>
+<label class="ck"><input type="checkbox" data-k="app3">大眾點評（查餐廳評分、菜單、定位、排隊資訊）</label>
+<label class="ck"><input type="checkbox" data-k="app4">美團（外送、訂餐）</label>
+<label class="ck"><input type="checkbox" data-k="app5">Trip.com（訂飯店、機票、高鐵、景點門票）</label>
+<label class="ck"><input type="checkbox" data-k="app6">Google翻譯（可要可不要，事先下載中文離線包，到大陸不一定能開）</label></div>
+<div class="card"><h3>證件與網路</h3>
+<label class="ck"><input type="checkbox" data-k="doc1">簽證、護照</label>
+<label class="ck"><input type="checkbox" data-k="net1">買中國當地 SIM 卡</label></div>
+<div class="card"><h3>行李清單</h3>
+<h4>老公的行李</h4>
+<label class="ck"><input type="checkbox" data-k="h1">四條煙：黃長1、七星藍莓2、代定1</label>
+<label class="ck"><input type="checkbox" data-k="h2">四瓶高粱</label>
+<h4>我的行李</h4>
+<label class="ck"><input type="checkbox" data-k="w1">隱形眼鏡水</label>
+<label class="ck"><input type="checkbox" data-k="w2">隱眼</label></div>
+<div class="card"><h3>預算（每人，台幣）</h3>
+<div class="stat"><span>機票來回</span><span>16,000 <small>約¥3,239</small></span></div>
+<div class="stat"><span>吃喝玩樂</span><span>10,000～30,000 <small>約¥2,024～6,073</small></span></div>
+<div class="stat"><span>住宿</span><span>5,000 <small>約¥1,012</small></span></div>
+<div class="stat"><span>台胞證和護照</span><span>3,500 <small>約¥709</small></span></div>
+<div class="stat"><span>婚禮紅包</span><span>5,000 <small>約¥1,012</small></span></div>
+<div class="stat"><b>總共每人</b><b>39,500～59,500</b></div>
+<small>人民幣為備註，依 1：4.94 估算。</small></div>
+</section>
+</div></div></div>
+
+<script>
+(function(){
+var K='tl_items',RK='tl_rate',OK='tl_open',CK='tl_checks',AK='tl_addr';
+function ld(k,d){try{var v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}}
+function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+var $=function(i){return document.getElementById(i)};
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function fmt(n){return Math.round(n).toLocaleString('en-US')}
+var items=ld(K,[]);if(!Array.isArray(items))items=[];
+var rt=$('rate');rt.value=ld(RK,4.94);
+function rate(){var r=parseFloat(rt.value);return r>0?r:4.94}
+function conv(s){var r=rate();if(s==='c'){var v=parseFloat($('cc').value);$('ct').value=isNaN(v)?'':(v*r).toFixed(0)}else{var w=parseFloat($('ct').value);$('cc').value=isNaN(w)?'':(w/r).toFixed(2)}}
+$('cc').oninput=function(){conv('c')};$('ct').oninput=function(){conv('t')};
+rt.oninput=function(){sv(RK,rate());conv('c');render()};
+$('cat').onchange=function(){$('cust').style.display=this.value==='自訂'?'block':'none'};
+$('add').onclick=function(){var a=parseFloat($('amt').value);if(!(a>0)){$('msg').textContent='請輸入金額';return}$('msg').textContent='';var c=$('cat').value==='自訂'?($('cust').value.trim()||'其他'):$('cat').value;var n=$('nm').value.trim();items.push({c:c,n:n||c,a:a,u:$('cur').value,d:$('day').value});sv(K,items);$('amt').value='';$('nm').value='';render()};
+function tw(x){return x.u==='CNY'?x.a*rate():x.a}
+function rows(o){var h='';for(var k in o){h+='<div class="stat"><span>'+esc(k)+'</span><span>NT$'+fmt(o[k])+'</span></div>'}return h||'<small>尚無資料</small>'}
+function render(){var tot=0,bd={},bc={},h='';
+items.forEach(function(x,i){var t=tw(x);tot+=t;bd[x.d]=(bd[x.d]||0)+t;bc[x.c]=(bc[x.c]||0)+t;
+h='<li><span>'+esc(x.d)+'・'+esc(x.c)+'・'+esc(x.n)+' <small>'+(x.u==='CNY'?'¥':'NT$')+fmt(x.a)+'</small></span><b>NT$'+fmt(t)+'</b><button class="x" data-i="'+i+'">×</button></li>'+h});
+$('list').innerHTML=h;$('tot').textContent='NT$'+fmt(tot);$('totc').textContent='約 ¥'+fmt(tot/rate());$('byd').innerHTML=rows(bd);$('byc').innerHTML=rows(bc)}
+$('list').onclick=function(e){var i=e.target.getAttribute('data-i');if(i!==null){items.splice(+i,1);sv(K,items);render()}};
+var armed=false,tm;
+function dis(){armed=false;clearTimeout(tm);$('clr').textContent='清空全部';$('cx').style.display='none'}
+$('clr').onclick=function(){if(!armed){armed=true;this.textContent='再按一次確認清空';$('cx').style.display='inline-block';tm=setTimeout(dis,6000)}else{items=[];sv(K,items);dis();render()}};
+$('cx').onclick=dis;
+var d=$('acct');if(ld(OK,true)===false)d.removeAttribute('open');d.addEventListener('toggle',function(){sv(OK,d.open)});
+var cs=ld(CK,{});Array.prototype.forEach.call(document.querySelectorAll('input[data-k]'),function(e){e.checked=!!cs[e.getAttribute('data-k')];e.onchange=function(){cs[e.getAttribute('data-k')]=e.checked;sv(CK,cs)}});
+var ad=ld(AK,{});Array.prototype.forEach.call(document.querySelectorAll('.ad'),function(e){if(ad[e.id])e.value=ad[e.id];e.oninput=function(){ad[e.id]=e.value;sv(AK,ad)}});
+window.cp=function(id,b){var el=$(id),t=el.value;if(!t){b.textContent='請先貼上地址';setTimeout(function(){b.textContent='複製地址'},1500);return}
+function ok(){b.textContent='已複製';setTimeout(function(){b.textContent='複製地址'},1500)}
+function fb(){el.focus();el.select();try{el.setSelectionRange(0,99999);document.execCommand('copy')}catch(e){}ok()}
+try{navigator.clipboard.writeText(t).then(ok,fb)}catch(e){fb()}};
+try{var n=new Date(),y=n.getFullYear(),s=new Date(y,3,28),e=new Date(y,4,4,23,59);if(n>e){y++;s=new Date(y,3,28)}
+var dd=Math.ceil((s-n)/864e5);$('cd').textContent=n>=s&&n<=e?'旅程進行中':'距出發還有 '+dd+' 天'}catch(e){}
+try{var c=document.createElement('canvas');c.width=c.height=180;var x=c.getContext('2d');x.fillStyle='#17140F';x.fillRect(0,0,180,180);x.fillStyle='#C9A85C';x.font='90px sans-serif';x.textAlign='center';x.fillText('✈',90,115);$('ico').href=c.toDataURL('image/png')}catch(e){}
+conv('c');render();
+})();
+</script>
+</body>
+</html>
